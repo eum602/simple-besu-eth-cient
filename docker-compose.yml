@@ -19,6 +19,7 @@ services:
       - ./config/keys:/opt/besu/keys
     ports:
       - 8545:8545/tcp
-
+      - 8546:8546/tcp
+      
 volumes:
   public-keys:
