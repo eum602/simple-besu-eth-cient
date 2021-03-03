@@ -4,16 +4,16 @@ services:
 
   ibft2_single_besu_node:
     image: hyperledger/besu:latest
-    environment:
-      - BESU_PUBLIC_KEY_DIRECTORY=${BESU_PUBLIC_KEY_DIRECTORY}
+      #environment:
+      #- BESU_PUBLIC_KEY_DIRECTORY=${BESU_PUBLIC_KEY_DIRECTORY}
     command: &base_options [
       "--config-file=/config/config.toml",
       "--genesis-file=/config/genesis.json",
       "--node-private-key-file=/opt/besu/keys/key",
-      "--rpc-http-api=WEB3,ETH,NET"]
-      #"--rpc-ws-api=WEB3,ETH,NET,EEA,ADMIN,${SAMPLE_POA_API-ibft}"]
+      "--rpc-http-api=WEB3,ETH,NET",
+      "--rpc-ws-api=WEB3,ETH,NET,EEA,ADMIN"]
     volumes:
-      - public-keys:${BESU_PUBLIC_KEY_DIRECTORY}
+      #- public-keys:${BESU_PUBLIC_KEY_DIRECTORY}
       - ./config/config.toml:/config/config.toml
       - ./config/genesis.json:/config/genesis.json
       - ./config/keys:/opt/besu/keys
