@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   ibft2_single_besu_node:
-    image: hyperledger/besu:latest
+    image: ghcr.io/lacchain/lacchain-besu:23.7.3.0-amd64
       #environment:
       #- BESU_PUBLIC_KEY_DIRECTORY=${BESU_PUBLIC_KEY_DIRECTORY}
     command: &base_options [
